@@ -4,7 +4,7 @@ using System.Text;
 
 namespace oop4Assign
 {
-    internal class InternationalShipment : Shipment
+    internal class InternationalShipment : Shipment , ITrackable
     {
         private string destinationCountry = default!;
         private decimal customFee;
@@ -65,6 +65,12 @@ namespace oop4Assign
             Console.WriteLine($"CustomFee : {customFee}");
             Console.WriteLine($"Destination Country : {destinationCountry}");
         }
-       
+
+        #region part02 Q4
+        public string GetTrackingStatus()
+        {
+            return $"Shipment {TrackingCode} is ready ";
+        } 
+        #endregion
     }
 }

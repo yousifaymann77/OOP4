@@ -4,7 +4,7 @@ using System.Text;
 
 namespace oop4Assign
 {
-    internal class ExpressShipment : Shipment
+    internal class ExpressShipment : Shipment , ITrackable
     {
         public ExpressShipment(string trackingCode, string description, decimal deliveryFee, decimal weight, decimal extraFee)
           : base(trackingCode, description, deliveryFee, weight)
@@ -49,7 +49,14 @@ namespace oop4Assign
                               $" Delivery Fee: ${DeliveryFee},\n" +
                               $" Estimated Cost: ${EstimatedCost}" +
                               $"\n ExtraFee : {extraFee}");
+        }
+
+        #region part02 Q4
+        public string GetTrackingStatus()
+        {
+            return $"Shipment {TrackingCode} is Being Prepared ";
         } 
+        #endregion
         #endregion
 
     }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace oop4Assign
 {
-    internal class StandardShipment : Shipment
+    internal class StandardShipment : Shipment , ITrackable
     {
         public StandardShipment(string trackingCode, string description, decimal deliveryFee, decimal weight)
         : base(trackingCode, description, deliveryFee, weight)
@@ -20,6 +20,12 @@ namespace oop4Assign
             }
         }
 
+        #region part02 Q4
+        public string GetTrackingStatus()
+        {
+            return $"Shipment {TrackingCode} is out for Delivery ";
+        } 
+        #endregion
 
         public override void PrintShipment()
         {
