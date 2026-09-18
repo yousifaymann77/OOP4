@@ -86,15 +86,34 @@ namespace oop4Assign
 
         public void PrintAllShipments()
         {
-            #region part02 Q6 Delivery Center Modification
+            
             foreach (Shipment shipment in shipments)
             {
                 if (shipment != null)
                 {
-                    Console.WriteLine(shipment.PrintShipment());
+                    shipment.PrintShipment();
                 }
             }
-            #endregion
+            
         }
+
+        #region part2 Q7 printing Tracking statuese and insurances
+        public void PrintTrackingStatueses()
+        {
+            foreach (ITrackable trackable in shipments)
+            {
+                trackable.GetTrackingStatus();
+                Console.WriteLine("---------");
+            }
+        }
+        public void PrintInsurances()
+        {
+            foreach (IInsurable insurable in shipments)
+            {
+                insurable.CalculateInsurance();
+                Console.WriteLine("-----------");
+            }
+        } 
+        #endregion
     }
 }
