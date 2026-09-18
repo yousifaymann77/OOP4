@@ -43,11 +43,9 @@ namespace oop4Assign
         public override void PrintShipment()
         {
             Console.WriteLine("---Express Shipment---");
+            Console.WriteLine();
             Console.WriteLine($"Tracking Code: {TrackingCode},\n" +
-                              $" Description: {Description},\n" +
-                              $" Weight: {Weight} kg,\n" +
-                              $" Delivery Fee: ${DeliveryFee},\n" +
-                              $" Estimated Cost: ${EstimatedCost}" +
+                              $" Estimated Cost: ${EstimatedCost} EGP" +
                               $"\n ExtraFee : {extraFee}");
         }
         #endregion

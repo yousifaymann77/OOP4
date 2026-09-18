@@ -4,7 +4,7 @@ using System.Text;
 
 namespace oop4Assign
 {
-    internal class DeliveryCenter
+    internal class DeliveryCenter 
     {
         private Shipment[] shipments;
 

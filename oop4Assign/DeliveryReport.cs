@@ -7,13 +7,13 @@ namespace oop4Assign
     #region part02 Q6
     internal class DeliveryReport
     {
-        public void Printshipment(ITrackable shipment)
+        public void PrintShipment(ITrackable shipment)
         {
-            Console.WriteLine($"Tracking Status : {shipment.GetTrackingStatus}");
+            Console.WriteLine($"Tracking Status : {shipment.GetTrackingStatus()}");
         }
         public void PrintInsurance(IInsurable shipment)
         {
-            Console.WriteLine($"Shipment Insurance : {shipment.CalculateInsurance}");
+            Console.WriteLine($"Shipment Insurance : {shipment.CalculateInsurance()}");
         }
     } 
     #endregion
