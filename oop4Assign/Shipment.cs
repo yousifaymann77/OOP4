@@ -4,7 +4,7 @@ using System.Text;
 
 namespace oop4Assign
 {
-    internal class Shipment
+    internal abstract class Shipment
     {
         private string trackingCode;
         private string description;
@@ -16,6 +16,7 @@ namespace oop4Assign
         public DeliveryAddress Address { get; set; }
         #endregion
 
+        
         public Shipment(string trackingCode)
         {
             this.TrackingCode = trackingCode;
@@ -99,21 +100,26 @@ namespace oop4Assign
             }
         }
 
-        public virtual decimal EstimatedCost
-        {
-            get
-            {
-                return deliveryFee + (weight * 5);
-            }
-        }
-        public virtual string PrintShipment()
-        {
-            return $"Tracking Code: {trackingCode},\n" +
-                $" Description: {description},\n" +
-                $" Weight: {weight} kg,\n" +
-                $" Delivery Fee: ${deliveryFee},\n" +
-                $" Estimated Cost: ${EstimatedCost}";
-        }
+        //public virtual decimal EstimatedCost
+        //{
+        //    get
+        //    {
+        //        return deliveryFee + (weight * 5);
+        //    }
+        //}
+        #region Part02 Q1&2 
+        public abstract decimal EstimatedCost { get; set; }
+        public abstract void PrintShipment(); 
+        #endregion
+
+        //public virtual string PrintShipment()
+        //{
+        //    return $"Tracking Code: {trackingCode},\n" +
+        //        $" Description: {description},\n" +
+        //        $" Weight: {weight} kg,\n" +
+        //        $" Delivery Fee: ${deliveryFee},\n" +
+        //        $" Estimated Cost: ${EstimatedCost}";
+        //}
 
         #region part02 Q1 Shipment class Update
         public void UpdateWeight(decimal weight)
