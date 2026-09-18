@@ -11,12 +11,26 @@ namespace oop4Assign
         {
         }
 
-        #region part02 Q 4 override Print Shipment
-        public override string PrintShipment()
+        #region part02 Q3 
+        public override decimal EstimatedCost
+        {
+            get
+            {
+                return (Weight * 5) + DeliveryFee;
+            }
+        }
+
+
+        public override void PrintShipment()
         {
             Console.WriteLine("---Standard Shipment---");
-            return base.PrintShipment();
-        }
+            Console.WriteLine($"Tracking Code: {TrackingCode},\n" +
+                              $" Description: {Description},\n" +
+                              $" Weight: {Weight} kg,\n" +
+                              $" Delivery Fee: ${DeliveryFee},\n" +
+                              $" Estimated Cost: ${EstimatedCost}");
+        } 
         #endregion
+
     }
 }

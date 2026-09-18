@@ -39,25 +39,32 @@ namespace oop4Assign
             }
         }
 
-        #region part02 Q3 
-        public override decimal EstimatedCost => base.EstimatedCost + customFee;
-        #endregion
 
-        #region part02 Q 4 override Print Shipment
-        public override string PrintShipment()
+        #region Part02 Q3
+        public override decimal EstimatedCost => (Weight * 5) + DeliveryFee + customFee;
+
+
+
+        public override void PrintShipment()
         {
             Console.WriteLine("---International Shipment---");
-            return $"{base.PrintShipment()}\n Destination country : {destinationCountry} \n CustomFee : {customFee}";
+            Console.WriteLine($"Tracking Code: {TrackingCode},\n" +
+                              $" Description: {Description},\n" +
+                              $" Weight: {Weight} kg,\n" +
+                              $" Delivery Fee: ${DeliveryFee},\n" +
+                              $" Estimated Cost: ${EstimatedCost}" +
+                              $"\n Destination country : {destinationCountry}" +
+                              $"\n CustomFee : {customFee}");
 
-        }
-
+        } 
         #endregion
-        #region part02 Q9 
+
+
         public virtual void GenerateCustomReport()
         {
             Console.WriteLine($"CustomFee : {customFee}");
             Console.WriteLine($"Destination Country : {destinationCountry}");
         }
-        #endregion
+       
     }
 }

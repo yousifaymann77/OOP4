@@ -28,23 +28,29 @@ namespace oop4Assign
                 }
             }
         }
-        #region part02 Q3 
+
+        #region Part02 Q3 
         public override decimal EstimatedCost
         {
             get
             {
-                return base.EstimatedCost + extraFee;
+                return (Weight * 5) + DeliveryFee + extraFee;
 
             }
 
         }
-        #endregion
-        #region part02 Q 4 override Print Shipment
-        public override string PrintShipment()
+
+        public override void PrintShipment()
         {
             Console.WriteLine("---Express Shipment---");
-            return base.PrintShipment() + $"\n ExtraFee : {extraFee}";
-        }
+            Console.WriteLine($"Tracking Code: {TrackingCode},\n" +
+                              $" Description: {Description},\n" +
+                              $" Weight: {Weight} kg,\n" +
+                              $" Delivery Fee: ${DeliveryFee},\n" +
+                              $" Estimated Cost: ${EstimatedCost}" +
+                              $"\n ExtraFee : {extraFee}");
+        } 
         #endregion
+
     }
 }

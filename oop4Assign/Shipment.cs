@@ -108,7 +108,7 @@ namespace oop4Assign
         //    }
         //}
         #region Part02 Q1&2 
-        public abstract decimal EstimatedCost { get; set; }
+        public abstract decimal EstimatedCost { get;  }
         public abstract void PrintShipment(); 
         #endregion
 
